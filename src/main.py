@@ -1,4 +1,6 @@
 from flask import Flask
+from controller import execute_control
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -12,6 +14,7 @@ def run_start():
 @app.route('/control/stop')
 def run_stop():
     return 'stop'
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80)
