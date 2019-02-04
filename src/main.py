@@ -1,5 +1,6 @@
 from flask import Flask
-from controller import execute_control
+# from controller import execute_control
+from websockets import connect, disconnect
 
 app = Flask(__name__)
 
@@ -9,10 +10,12 @@ def hello_world():
 
 @app.route('/control/start')
 def run_start():
+    connect('controls')
     return 'start'
 
 @app.route('/control/stop')
 def run_stop():
+    disconnect()
     return 'stop'
 
 
