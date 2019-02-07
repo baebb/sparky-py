@@ -1,0 +1,11 @@
+name: sparky-py
+channels:
+  - defaults
+dependencies:
+  - python=3.5.6
+  - flask=1.0.2
+  - pyserial=3.4
+  - pip:
+      - pubnub==4.1.2
+prefix: /miniconda3/envs/sparky-py
+
