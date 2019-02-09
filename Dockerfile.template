@@ -7,7 +7,7 @@ FROM balenalib/%%BALENA_MACHINE_NAME%%-ubuntu
 RUN install_packages wget
 
 CMD ["wget", "http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-armv7l.sh"]
-CMD ["bash", "Miniconda3-latest-Linux-armv7l.sh"]
+# CMD ["bash", "Miniconda3-latest-Linux-armv7l.sh"]
 
 # Set our working directory
 # WORKDIR /usr/src/app
