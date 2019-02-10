@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'dog!'
+    return 'cat'
 
 @app.route('/control/start')
 def run_start():
