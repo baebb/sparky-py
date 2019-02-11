@@ -39,14 +39,14 @@ class WebsocketListener(SubscribeCallback):
         pass  # handle incoming presence data
 
     def message(self, pubnub, message):
-        pass  # handle incoming messages
+        print(message.message)
+
 
 websocket_listener = WebsocketListener()
+pubnub.add_listener(websocket_listener)
 
 def connect(channel):
     pubnub.subscribe().channels(channel).execute()
-    pubnub.add_listener(websocket_listener)
 
-def disconnect():
+def disconnect(channel):
     pubnub.unsubscribe_all()
-    pubnub.remove_listener(websocket_listener)
