@@ -17,8 +17,7 @@ class WebsocketListener(SubscribeCallback):
         # The status object returned is always related to subscribe but could contain
         # information about subscribe, heartbeat, or errors
         # use the operationType to switch on different options
-        if status.operation == PNOperationType.PNSubscribeOperation \
-                or status.operation == PNOperationType.PNUnsubscribeOperation:
+        if status.operation == PNOperationType.PNSubscribeOperation:
             if status.category == PNStatusCategory.PNConnectedCategory:
                 print('connected to channel')
             elif status.category == PNStatusCategory.PNReconnectedCategory:
@@ -31,6 +30,8 @@ class WebsocketListener(SubscribeCallback):
                 print('access to channel denied')
             else:
                 print('something else')
+        elif status.operation == PNOperationType.PNUnsubscribeOperation:
+            print('disconnected from channel')
         elif status.operation == PNOperationType.PNSubscribeOperation:
             if status.is_error():
                 print('error connecting to channel')
