@@ -1,3 +1,5 @@
+# from controller import execute_control
+
 from pubnub.pnconfiguration import PNConfiguration
 from pubnub.callbacks import SubscribeCallback
 from pubnub.enums import PNOperationType, PNStatusCategory
@@ -39,8 +41,8 @@ class WebsocketListener(SubscribeCallback):
         pass  # handle incoming presence data
 
     def message(self, pubnub, message):
-        print(message.message)
-
+        if 'controls' in message.message:
+            print(message.message['controls'])
 
 websocket_listener = WebsocketListener()
 pubnub.add_listener(websocket_listener)
@@ -48,5 +50,5 @@ pubnub.add_listener(websocket_listener)
 def connect(channel):
     pubnub.subscribe().channels(channel).execute()
 
-def disconnect(channel):
+def disconnect():
     pubnub.unsubscribe_all()

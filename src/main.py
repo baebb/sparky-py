@@ -1,5 +1,4 @@
 from flask import Flask
-# from controller import execute_control
 from websockets import connect, disconnect
 
 app = Flask(__name__)
