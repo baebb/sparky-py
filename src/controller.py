@@ -1,6 +1,9 @@
 from serial import Serial
 
-port = Serial('/dev/ttyACM0')
+try:
+    port = Serial('/dev/ttyACM0')
+except:
+    print('No webcam connected')
 
 control_key = {
     'up': 'f',

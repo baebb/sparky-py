@@ -1,4 +1,4 @@
-# from controller import execute_control
+from controller import execute_control
 
 from pubnub.pnconfiguration import PNConfiguration
 from pubnub.callbacks import SubscribeCallback
