@@ -16,6 +16,6 @@ control_key = {
 def execute_control(control):
     if control in control_key.keys():
         command = control_key[control]
-        port.write(command)
+        port.write(command.encode())
     else:
         print('Command not recognized')
