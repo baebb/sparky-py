@@ -43,7 +43,8 @@ class WebsocketListener(SubscribeCallback):
 
     def message(self, pubnub, message):
         if 'controls' in message.message:
-            print(message.message['controls'])
+            new_command = message.message['controls']
+            execute_control(new_command)
 
 websocket_listener = WebsocketListener()
 pubnub.add_listener(websocket_listener)

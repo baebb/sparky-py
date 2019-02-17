@@ -3,7 +3,7 @@ from serial import Serial
 try:
     port = Serial('/dev/ttyACM0')
 except:
-    print('No webcam connected')
+    print('USB controller not connected')
 
 control_key = {
     'up': 'f',
