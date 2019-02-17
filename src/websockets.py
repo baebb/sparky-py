@@ -43,8 +43,8 @@ class WebsocketListener(SubscribeCallback):
         pass  # handle incoming presence data
 
     def message(self, pubnub, message):
-        if 'controls' in message.message:
-            new_command = message.message['controls']
+        if 'control' in message.message:
+            new_command = message.message['control']
             execute_control(new_command)
 
 websocket_listener = WebsocketListener()
