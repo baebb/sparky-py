@@ -9,6 +9,7 @@ pnconfig = PNConfiguration()
 pnconfig.publish_key = "pub-c-86d77efa-af69-435d-bd9d-d9e25341436f"
 pnconfig.subscribe_key = "sub-c-3e91234c-012f-11e9-a399-32ec39b2e34f"
 pnconfig.ssl = False
+pnconfig.uuid = 'droneboi'
 
 pubnub = PubNub(pnconfig)
 
